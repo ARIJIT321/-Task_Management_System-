@@ -27,7 +27,5 @@ public class Task {
 
     private boolean completed;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User assignedUser;
+    private String assignedUser;
 }
