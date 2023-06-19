@@ -21,7 +21,7 @@ public class TaskServiceImpl implements TaskService{
 
     @Override
     public Task createTask(Task task) throws TaskException {
-        User assignedUser = userRepository.findByUsername(task.getAssignedUser().getUsername());
+        User assignedUser = userRepository.findByUsername(task.getAssignedUser());
         if (assignedUser == null) {
             throw new TaskException("User Do not exist");
         }
