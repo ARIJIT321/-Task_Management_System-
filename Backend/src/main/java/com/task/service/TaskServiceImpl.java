@@ -55,6 +55,7 @@ public class TaskServiceImpl implements TaskService{
             throw new TaskException("Task do not Exist");
         }else {
             taskRepository.delete(existingTask.get());
+            return existingTask.get();
         }
     }
 
