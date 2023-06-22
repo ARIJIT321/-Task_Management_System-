@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .task-list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .task-item {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+  }
+  
+  .task-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .task-description {
+    margin-bottom: 10px;
+  }
+  
+  .task-due-date {
+    color: #666666;
+    font-size: 14px;
+  }
+  
+  .task-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .task-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .task-actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  .update-task-form,
+  #createTaskForm {
+    margin-top: 20px;
+  }
+  
+  .update-task-form input,
+  .update-task-form textarea,
+  #createTaskForm input,
+  #createTaskForm textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .update-task-form button,
+  #createTaskForm button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .update-task-form button:hover,
+  #createTaskForm button:hover {
+    background-color: #0056b3;
+  }
+  

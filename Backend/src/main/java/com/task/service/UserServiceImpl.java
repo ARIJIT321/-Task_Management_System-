@@ -29,10 +29,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public User loginUser(User user) throws UserException {
         User existingUser = userRepo.findByUsername(user.getUsername());
-        if (existingUser != null) {
+        if (existingUser == null) {
             throw new UserException("No User Found with username:- " + user.getUsername());
         }else {
-            if(existingUser.getPassword()!=user.getPassword()){
+            if(!existingUser.getPassword().equals(user.getPassword())){
                 throw new UserException("User name or password is wrong");
             }else {
                 return existingUser;

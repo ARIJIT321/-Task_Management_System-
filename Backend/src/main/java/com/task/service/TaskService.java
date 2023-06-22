@@ -12,7 +12,7 @@ public interface TaskService {
 
     public Task updateTask(Task task) throws TaskException;
 
-    public Task deleteTask(Task task) throws TaskException;
+    public Task deleteTask(Long taskId) throws TaskException;
 
     public List<Task> getTaskByTitle(String title) throws TaskException;
 
@@ -24,5 +24,7 @@ public interface TaskService {
 
     public List<Task> getTaskByStatus(boolean status) throws TaskException;
 
+    public List<Task> getAllTask() throws TaskException;
 
+    public Task getTaskById(Long taskId) throws TaskException;
 }

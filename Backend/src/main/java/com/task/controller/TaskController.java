@@ -26,13 +26,13 @@ public class TaskController {
 
     @PutMapping("/updateTask")
     public ResponseEntity<Task> updateTask(@RequestBody Task task) throws TaskException {
-        Task createdTask = taskService.createTask(task);
+        Task createdTask = taskService.updateTask(task);
         return new ResponseEntity<>(createdTask, HttpStatus.ACCEPTED);
     }
 
-    @DeleteMapping("/deleteTask")
-    public ResponseEntity<Task> deleteTask(@RequestBody Task task) throws TaskException {
-        Task deletedTask = taskService.deleteTask(task);
+    @DeleteMapping("/deleteTask/{taskId}")
+    public ResponseEntity<Task> deleteTask(@PathVariable Long taskId) throws TaskException {
+        Task deletedTask = taskService.deleteTask(taskId);
         return new ResponseEntity<>(deletedTask, HttpStatus.ACCEPTED);
     }
 
@@ -50,7 +50,7 @@ public class TaskController {
 
     @GetMapping("/getTasks/description/{description}")
     public ResponseEntity<List<Task>> getTasksByDescription(@PathVariable String description) throws TaskException {
-        List<Task> tasks = taskService.getTaskByAssignedUser(description);
+        List<Task> tasks = taskService.getTaskByDescriptions(description);
         return new ResponseEntity<>(tasks,HttpStatus.ACCEPTED);
     }
 
@@ -65,4 +65,17 @@ public class TaskController {
         List<Task> tasks = taskService.getTaskByStatus(status);
         return new ResponseEntity<>(tasks,HttpStatus.ACCEPTED);
     }
+
+    @GetMapping("/getAllTasks")
+    public ResponseEntity<List<Task>> getAllTasks() throws TaskException{
+        List<Task> tasks = taskService.getAllTask();
+        return new ResponseEntity<>(tasks,HttpStatus.ACCEPTED);
+    }
+
+    @GetMapping("getTasks/Id/{taskId}")
+    public ResponseEntity<Task> getTaskByTaskId(@PathVariable Long taskId) throws TaskException{
+        Task task = taskService.getTaskById(taskId);
+        return new ResponseEntity<>(task,HttpStatus.ACCEPTED);
+    }
+
 }
